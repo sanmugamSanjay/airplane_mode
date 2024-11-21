@@ -63,3 +63,11 @@ def get_capacity(flight):
 		plane=frappe.get_doc("Airplane",name)
 		capacity=plane.capacity
 	return capacity
+
+@frappe.whitelist()
+def check_ticket(seat,flight):
+	seat = int(seat)
+	capacity=get_capacity(flight)
+	if seat > capacity:
+		frappe.throw(_("Selected seat-{0} greater then the Capacity").format(seat))
+	return capacity
