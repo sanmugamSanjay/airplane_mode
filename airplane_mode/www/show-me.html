@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Color Example</title>
+</head>
+<body>
+    <style>
+        .custom-background {
+            {% set color=frappe.form_dict.get("color") %}
+            background-color: {{ color if color else "black"}};
+            color: #fff;
+            padding: 200px;
+            max-width:150px;
+        }
+    </style>
+    
+    <div class="custom-background">
+       
+    </div>
+</body>
+</html>
