@@ -13,8 +13,11 @@ def execute(filters: dict | None = None):
 	every time the report is refreshed or a filter is updated.
 	"""
 	columns = get_columns()
+	frappe.errprint(columns)
 	data = get_data()
+	frappe.errprint(data)
 	chart=get_chart(data)
+	frappe.errprint(chart)
 	message="Detailed revenue report by airline"
 
 	return columns, data, message, chart, None
@@ -45,7 +48,7 @@ def get_data() -> list[list]:
   	left join `tabAirplane` t1 on t.name=t1.airline
   	left join `tabAirplane Flight` t2 on t1.name=t2.airplane
   	left join `tabAirplane Ticket` t3 on t2.name=t3.flight group by t.name""",as_dict=True)
-
+	frappe.errprint(data)
 
 	return data
 
@@ -53,7 +56,7 @@ def get_chart(data):
 	return {
 		"data":{
 			"labels":[d["airline"] for d in data],
-			"dataset": [{"name":"Revenue By Airline","values":[d["revenue"] for d in data]}],
+			"datasets": [{"name":"Revenue By Airline","values":[d["revenue"] for d in data]}],
 			"type":"donut"
 		}
 	}
