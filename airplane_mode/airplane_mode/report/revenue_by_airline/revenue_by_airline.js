@@ -10,4 +10,11 @@ frappe.query_reports["Revenue By Airline"] = {
 		// 	"reqd": 1,
 		// },
 	],
+	formatter: function (value, row, column, data, default_formatter) {
+		value = default_formatter(value, row, column, data);
+		if (data["airline"] === "Total") {
+			value = value.bold()
+		} 
+		return value;
+	}
 };

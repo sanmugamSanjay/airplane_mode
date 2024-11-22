@@ -4,9 +4,10 @@
 frappe.ui.form.on("Airline", {
 	refresh(frm) {
         if(frm.doc.website){
-            frm.sidebar.add_user_action("visit website",()=>{
-                window.open(frm.doc.website,'_blank')
-            })
+            frm.add_web_link("visit website",frm.doc.website)
+            // frm.sidebar.add_user_action("visit website",()=>{
+            //     window.open(frm.doc.website,'_blank')
+            // })
             // frm.add_custom_button("visit website",()=>{
             //     window.open(frm.doc.website,'_blank')
             // })
