@@ -66,7 +66,8 @@
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
-   "label": "start Date"
+   "label": "start Date",
+   "mandatory_depends_on": "eval: doc.tenant != null"
   },
   {
    "fieldname": "column_break_bxvo",
@@ -75,7 +76,8 @@
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
-   "label": "End Date"
+   "label": "End Date",
+   "mandatory_depends_on": "eval: doc.tenant != null"
   },
   {
    "fieldname": "tenant",
@@ -86,7 +88,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-01 11:08:50.662497",
+ "modified": "2024-12-02 15:58:45.327343",
  "modified_by": "Administrator",
  "module": "shop-rent",
  "name": "Airport Shop",
