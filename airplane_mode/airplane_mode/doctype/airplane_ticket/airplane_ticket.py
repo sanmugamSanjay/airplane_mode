@@ -8,6 +8,30 @@ import random
 
 
 class AirplaneTicket(Document):
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
+
+	from typing import TYPE_CHECKING
+
+	if TYPE_CHECKING:
+		from airplane_mode.airplane_mode.doctype.airplane_ticket_add_on_item.airplane_ticket_add_on_item import AirplaneTicketAddonItem
+		from frappe.types import DF
+
+		add_ons: DF.Table[AirplaneTicketAddonItem]
+		amended_from: DF.Link | None
+		departure_date: DF.Date | None
+		departure_time: DF.Time | None
+		destination_airport_code: DF.Data | None
+		duration_of_flight: DF.Duration | None
+		flight: DF.Link
+		flight_price: DF.Currency
+		gate_no: DF.Literal["GT-1", "GT-2", "GT-3", "GT-4", "GT-5", "GT-6"]
+		passenger: DF.Link
+		seat: DF.Data | None
+		source_airport_code: DF.Data | None
+		status: DF.Literal["Booked", "Checked-In", "Boarded"]
+		total_amount: DF.Currency
+	# end: auto-generated types
 	def on_submit(self):
 		if self.status != "Boarded":
 			frappe.throw("Status not equlat to boarded")

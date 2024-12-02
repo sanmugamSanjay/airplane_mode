@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class Airplane(Document):
+class ShopRentPayment(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,9 +14,11 @@ class Airplane(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		airline: DF.Link
-		capacity: DF.Int
-		initial_audit_completed: DF.Check
-		model: DF.Data
+		amended_from: DF.Link | None
+		payment_amount: DF.Currency
+		payment_date: DF.Date
+		shop: DF.Link
+		status: DF.Literal["Pending", "Paid"]
+		tenant: DF.Link
 	# end: auto-generated types
 	pass

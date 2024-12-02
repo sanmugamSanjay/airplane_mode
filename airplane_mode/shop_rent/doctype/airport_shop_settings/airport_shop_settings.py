@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class Airplane(Document):
+class AirportShopSettings(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,9 +14,8 @@ class Airplane(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		airline: DF.Link
-		capacity: DF.Int
-		initial_audit_completed: DF.Check
-		model: DF.Data
+		area_type: DF.Literal["SQ Meter", "Feet"]
+		enable_rent_reminders: DF.Check
+		standard_rent_amount: DF.Currency
 	# end: auto-generated types
 	pass

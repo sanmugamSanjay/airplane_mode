@@ -16,12 +16,15 @@
   "time_of_departure",
   "route",
   "is_published",
+  "gate_no",
   "section_break_nzqx",
   "source_airport",
   "source_airport_code",
   "column_break_ynuv",
   "destination_airport",
-  "destination_airport_code"
+  "destination_airport_code",
+  "crew_members_section",
+  "crew_members"
  ],
  "fields": [
   {
@@ -125,6 +128,24 @@
    "fieldname": "is_published",
    "fieldtype": "Check",
    "label": "Is Published"
+  },
+  {
+   "default": "GT-1",
+   "fieldname": "gate_no",
+   "fieldtype": "Select",
+   "label": "Gate No",
+   "options": "GT-1\nGT-2\nGT-3\nGT-4\nGT-5"
+  },
+  {
+   "fieldname": "crew_members_section",
+   "fieldtype": "Section Break",
+   "label": "Crew Members"
+  },
+  {
+   "fieldname": "crew_members",
+   "fieldtype": "Table",
+   "label": "Crew Members",
+   "options": "Crew Member"
   }
  ],
  "has_web_view": 1,
@@ -137,7 +158,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-11-22 13:41:19.240000",
+ "modified": "2024-11-30 14:28:56.488568",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",

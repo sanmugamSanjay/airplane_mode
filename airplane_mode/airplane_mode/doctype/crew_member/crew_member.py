@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class Airplane(Document):
+class CrewMember(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,9 +14,10 @@ class Airplane(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		airline: DF.Link
-		capacity: DF.Int
-		initial_audit_completed: DF.Check
-		model: DF.Data
+		member_type: DF.Literal["Attendant", "Engineer", "Co-Pilot", "Cabin Crew Manager", "Flight Attendant Supervisor"]
+		parent: DF.Data
+		parentfield: DF.Data
+		parenttype: DF.Data
+		user: DF.Link
 	# end: auto-generated types
 	pass

@@ -9,7 +9,12 @@
   "code",
   "column_break_nmbo",
   "city",
-  "country"
+  "country",
+  "section_break_srqh",
+  "total_count",
+  "occupied_count",
+  "column_break_ivuh",
+  "available_count"
  ],
  "fields": [
   {
@@ -36,11 +41,49 @@
    "in_list_view": 1,
    "label": "Country",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_srqh",
+   "fieldtype": "Section Break",
+   "label": "Shop Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_count",
+   "fieldtype": "Int",
+   "label": "Total Count",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "occupied_count",
+   "fieldtype": "Int",
+   "label": "Occupied Count",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ivuh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "available_count",
+   "fieldtype": "Int",
+   "label": "Available Count",
+   "non_negative": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-11-22 13:37:44.562510",
+ "links": [
+  {
+   "link_doctype": "Airport Shop",
+   "link_fieldname": "airport"
+  }
+ ],
+ "modified": "2024-12-01 12:02:28.807471",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airport",
