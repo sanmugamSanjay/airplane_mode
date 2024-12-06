@@ -1,0 +1,96 @@
+
+{% block page_content %}
+<div class="container">
+    <h1 class="shop-list-heading">Available Shops</h1>
+    <!-- {% set shops=frappe.get_all("Airport Shop",filters=[{"status":"Available"}],fields=["*"]) %} -->
+    {% set shops=frappe.get_all("Airport Shop",fields=["*"]) %}
+
+    {% for shop in shops %}
+    <div class="shop-card">
+        <div class="shop-title">{{ shop.name }}</div>
+        <div class="shop-detail">Shop Number: {{ shop.shop_number }}</div>
+        <div class="shop-detail">Airport: {{ shop.airport }}</div>
+        {% set color = 'status_g' if shop.status == 'Available' else 'status_r' %}
+        <div class="shop-detail">Status: <span class="{{color}}">{{ shop.status }}</span></div>
+        <a href="shops/{{shop.route}}" class="view-details">View Details</a>
+    </div>
+    {% endfor %}
+</div>
+ 
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px;
+        justify-content: flex-start;
+    }
+ 
+    .shop-list-heading {
+        width: 100%;
+        margin-bottom: 15px;
+        color: #333;
+        font-size: 24px;
+    }
+ 
+    .shop-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 12px;
+        width: 325px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+ 
+    .shop-title {
+        font-weight: bold;
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+ 
+    .shop-detail {
+        font-size: 14px;
+        color: #666;
+        margin: 4px 0;
+    }
+ 
+    .status_g {
+        color: green ;
+        font-weight: 500;
+    }
+
+    .status_r {
+        color:red ;
+        font-weight: 500;
+    }
+ 
+    .manage-btn {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 6px;
+        width: 100%;
+        border-radius: 4px;
+        margin-top: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+ 
+    .manage-btn:hover {
+        background: #0056b3;
+    }
+ 
+    .view-details {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 12px;
+        display: block;
+        text-align: center;
+        margin-top: 6px;
+    }
+ 
+    .view-details:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock %}
+ 

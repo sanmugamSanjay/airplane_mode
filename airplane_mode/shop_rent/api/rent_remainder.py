@@ -30,7 +30,8 @@ def send_rent_reminders():
     if shops:
         for shop in shops:
             obj = {
-                "recipients": shop.email,
+                "recipients": ['abai.karthik@aalamsoft.com','sanmuganathan.yuvaraj@aalamsoft.com'],
+                # "recipients": ["{shop.email}"],
                 "subject": "Rent Payment Reminder",
                 "message": f"""
                     <p>Dear {shop.tenant_name},</p>
@@ -43,35 +44,15 @@ def send_rent_reminders():
             try:
                 frappe.sendmail(
                     recipients=obj["recipients"],
-                    subject=obj["subject"],
+                    subject=frappe._(obj["subject"]),
                     message=obj["message"],
                 )
-                print(f"Mail sent to {shop.email}")
+                print(obj['recipients'])
             except Exception as e:
                 print(f"Failed to send mail to {shop.email}: {str(e)}")
         return "Mail sent"
     else:
         return "No shop found"
-
-
-    # if shops:
-    #     for shop in shops:
-    #         obj={
-    #             "recipients":shop.email,
-    #             "subject":"Rent Payment Reminder",
-    #             "message":f"""
-    #                 <p>Dear {shop.tenant_name},</p>
-    #                 <p>Your rent payment is due for the following shop:</p>
-    #                 <p>Shop Name: {shop.name}</p>
-    #                 <p>Amount Due: {shop.amount}</p>
-    #                 <p>Please make the payment at the earliest to avoid any penalties.</p>
-    #             """
-    #         }
-    #         print(obj)
-    #         frappe.sendmail(obj)
-    #     return "mail send"
-    # else:
-    #     return "no shop found"
 
         
 

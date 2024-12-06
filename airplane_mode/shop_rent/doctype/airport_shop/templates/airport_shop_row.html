@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="section">
+                <div class="detail-row card-item">
+                    <label>Name:</label>
+                    <span>
+                        <a href="{{ doc.route }}" class="card-link">{{ doc.name }}</a>
+                    </span>
+                </div>
+                <div class="detail-row card-item">
+                    <label>Status:</label>
+					{% set color = 'status_g' if doc.status == 'Available' else 'status_r' %}
+                    <span class="{{color}}">{{ doc.status }}</span>
+                </div>
+                <div class="detail-row card-item">
+                    <label>Airport:</label>
+                    <span>{{ doc.airport }}</span>
+                </div>
+                <div class="detail-row card-item">
+                    <label>Tenant:</label>
+                    <span>{{ doc.tenant }}</span>
+                </div>
+            </div>
+        </div>
+        <style>
+            .card {
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                margin: 15px 0;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+           
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+           
+            .card-body {
+                padding: 20px;
+            }
+           
+            .card-item {
+                border-bottom: 1px solid #eee;
+            }
+           
+            .card-item:last-child {
+                border-bottom: none;
+            }
+           
+            .card-link {
+                color: #007bff;
+                text-decoration: none;
+                font-weight: 500;
+            }
+           
+            .card-link:hover {
+                color: #0056b3;
+                text-decoration: underline;
+            }
+
+			.status_g{
+				color: green;
+			}
+			.status_r{
+				color: red;
+			}
+        </style>
+    </div>
+</div>
+ 
+ 
+ 
+

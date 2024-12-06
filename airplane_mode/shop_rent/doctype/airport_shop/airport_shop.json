@@ -13,6 +13,8 @@
   "area_in_sq",
   "status",
   "tenant",
+  "is_publish",
+  "route",
   "contract_details_section",
   "start_date",
   "column_break_bxvo",
@@ -84,11 +86,23 @@
    "fieldtype": "Link",
    "label": "Tenant",
    "options": "Tenant"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_publish",
+   "fieldtype": "Check",
+   "label": "Is Publish"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
   }
  ],
- "index_web_pages_for_search": 1,
+ "has_web_view": 1,
+ "is_published_field": "is_publish",
  "links": [],
- "modified": "2024-12-02 15:58:45.327343",
+ "modified": "2024-12-03 17:39:39.567757",
  "modified_by": "Administrator",
  "module": "shop-rent",
  "name": "Airport Shop",
@@ -108,6 +122,7 @@
    "write": 1
   }
  ],
+ "route": "shops",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
