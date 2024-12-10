@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class Airport(Document):
+class ShopLead(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,15 +14,12 @@ class Airport(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		available_count: DF.Int
-		city: DF.Data
-		code: DF.Data
-		country: DF.Data
-		location_name: DF.Data
-		logo: DF.AttachImage | None
-		occupied_count: DF.Int
-		state: DF.Data
-		total_count: DF.Int
-		zip_code: DF.Data
+		airport_shop: DF.Link
+		amended_from: DF.Link | None
+		description: DF.SmallText | None
+		email: DF.Data
+		name1: DF.Data
+		phone_no: DF.Phone
+		status: DF.Literal["New Lead", "Contacted", "Lease Offered", "Lease Signed", "Closed (Rented)", "Closed (Not Rented)"]
 	# end: auto-generated types
 	pass

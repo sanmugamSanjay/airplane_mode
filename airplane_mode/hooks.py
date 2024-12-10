@@ -245,3 +245,11 @@ export_python_type_annotations = True
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "dt": "Shop Type",
+        "filters": {
+            "name": ["in", ["Stall", "Walk-through", "Normal"]]
+        }
+    }
+]

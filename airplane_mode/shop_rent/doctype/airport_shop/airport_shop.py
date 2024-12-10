@@ -24,6 +24,7 @@ class AirportShop(Document):
         start_date: DF.Date | None
         status: DF.Literal["Available", "Occupied"]
         tenant: DF.Link | None
+        type: DF.Link
     # end: auto-generated types
     def get_page_info(self):
         return {
@@ -44,12 +45,12 @@ class AirportShop(Document):
         self.amount = standard_amount_for_sq * self.area_in_sq
                 
     def on_trash(self):
-        if not self.is_canceled:
-            update_airport_count(self, "delete")
+        # if not self.is_canceled:
+        update_airport_count(self, "delete")
 
     def on_cancel(self):
-        self.is_canceled = True
-        self.save()
+        # self.is_canceled = True
+        # self.save()
         update_airport_count(self, "cancel")
 
 

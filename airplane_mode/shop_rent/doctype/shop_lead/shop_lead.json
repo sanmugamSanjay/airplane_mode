@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{airport_shop}-{MM}-{YYY}-{####}",
+ "creation": "2024-12-09 15:53:09.023547",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_dcmx",
+  "amended_from",
+  "name1",
+  "airport_shop",
+  "status",
+  "column_break_kwnj",
+  "email",
+  "phone_no",
+  "section_break_efrk",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_dcmx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Shop Lead",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "airport_shop",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Airport Shop",
+   "options": "Airport Shop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_kwnj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone_no",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "label": "Phone No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_efrk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "default": "New Lead",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "New Lead\nContacted\nLease Offered\nLease Signed\nClosed (Rented)\nClosed (Not Rented)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-12-09 16:03:17.789742",
+ "modified_by": "Administrator",
+ "module": "shop-rent",
+ "name": "Shop Lead",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

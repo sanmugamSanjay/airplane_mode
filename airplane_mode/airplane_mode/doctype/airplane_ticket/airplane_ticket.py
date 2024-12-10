@@ -49,6 +49,9 @@ class AirplaneTicket(Document):
 		for item in items:
 			total=total+item.amount
 		return total
+	
+	def dispaly_the_name(self):
+		return f"{self.name}"
 		
 	def before_insert(self):
 		capacity=self.get_capacity_by_flight(self.flight)

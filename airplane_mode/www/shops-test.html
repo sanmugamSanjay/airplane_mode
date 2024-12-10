@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/airplane_mode/css/airport_shop.css">
+</head>
+<body>
+       <div class="container">
+        <h1 class="shop-list-heading">Available Shops</h1>
+        <!-- {% set shops=frappe.get_all("Airport Shop",filters=[{"status":"Available"}],fields=["*"]) %} -->
+        {% set shops=frappe.get_all("Airport Shop",fields=["*"]) %}
+    
+        {% for shop in shops %}
+        <div class="shop-card">
+            <div class="shop-title">{{ shop.name }}</div>
+            <div class="shop-detail">Shop Number: {{ shop.shop_number }}</div>
+            <div class="shop-detail">Airport: {{ shop.airport }}</div>
+            {% set color = 'status_g' if shop.status == 'Available' else 'status_r' %}
+            <div class="shop-detail">Status: <span class="{{color}}">{{ shop.status }}</span></div>
+            <a href="shops/{{shop.route}}" class="view-details">View Details</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

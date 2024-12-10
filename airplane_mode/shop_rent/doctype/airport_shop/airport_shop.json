@@ -9,6 +9,7 @@
   "shop_number",
   "amount",
   "airport",
+  "type",
   "column_break_vyps",
   "area_in_sq",
   "status",
@@ -97,12 +98,20 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Type",
+   "link_filters": "[[\"Shop Type\",\"enabled\",\"=\",1]]",
+   "options": "Shop Type",
+   "reqd": 1
   }
  ],
  "has_web_view": 1,
  "is_published_field": "is_publish",
  "links": [],
- "modified": "2024-12-03 17:39:39.567757",
+ "modified": "2024-12-06 11:38:51.096830",
  "modified_by": "Administrator",
  "module": "shop-rent",
  "name": "Airport Shop",
