@@ -46,6 +46,8 @@ def send_rent_reminders():
                     recipients=obj["recipients"],
                     subject=frappe._(obj["subject"]),
                     message=obj["message"],
+                    delayed=False,
+					retry=3
                 )
                 print(obj['recipients'])
             except Exception as e:
@@ -53,7 +55,3 @@ def send_rent_reminders():
         return "Mail sent"
     else:
         return "No shop found"
-
-        
-
-   

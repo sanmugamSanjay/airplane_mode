@@ -25,7 +25,7 @@ class AirplaneTicket(Document):
 		duration_of_flight: DF.Duration | None
 		flight: DF.Link
 		flight_price: DF.Currency
-		gate_no: DF.Literal["GT-1", "GT-2", "GT-3", "GT-4", "GT-5", "GT-6"]
+		gate_no: DF.Data | None
 		passenger: DF.Link
 		seat: DF.Data | None
 		source_airport_code: DF.Data | None
@@ -38,7 +38,7 @@ class AirplaneTicket(Document):
 
 	def before_save(self):
 		capacity=self.get_capacity_by_flight(self.flight)
-		frappe.errprint(capacity)
+		frappe.errprint(self.gate_no)
 		total=0
 		if len(self.add_ons) > 0: 
 			total=self.calculation(self.add_ons)
