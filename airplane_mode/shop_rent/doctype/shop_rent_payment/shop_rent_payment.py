@@ -1,7 +1,7 @@
 # Copyright (c) 2024, Sanmugam and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
@@ -21,4 +21,6 @@ class ShopRentPayment(Document):
 		status: DF.Literal["Pending", "Paid"]
 		tenant: DF.Link
 	# end: auto-generated types
-	pass
+	def on_submit(self):
+		if self.status != "Paid":
+			frappe.throw("Status not equlat to Paid")

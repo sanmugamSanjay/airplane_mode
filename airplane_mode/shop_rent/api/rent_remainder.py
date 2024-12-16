@@ -30,8 +30,8 @@ def send_rent_reminders():
     if shops:
         for shop in shops:
             obj = {
-                "recipients": ['abai.karthik@aalamsoft.com','sanmuganathan.yuvaraj@aalamsoft.com'],
-                # "recipients": ["{shop.email}"],
+                # "recipients": ['abai.karthik@aalamsoft.com','sanmuganathan.yuvaraj@aalamsoft.com'],
+                "recipients": ["{shop.email}"],
                 "subject": "Rent Payment Reminder",
                 "message": f"""
                     <p>Dear {shop.tenant_name},</p>

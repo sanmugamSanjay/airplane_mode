@@ -3,6 +3,7 @@
 
 frappe.ui.form.on("Airplane Flight", {
     refresh(frm) {
+        if(!frm.is_new()){
         let d = new frappe.ui.Dialog({
             title: 'Select Gate',
             fields: [
@@ -42,4 +43,5 @@ frappe.ui.form.on("Airplane Flight", {
             d.show();
         }, "Action");
     }
+}
 });

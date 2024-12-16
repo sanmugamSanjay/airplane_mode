@@ -34,7 +34,7 @@ class AirplaneTicket(Document):
 	# end: auto-generated types
 	def on_submit(self):
 		if self.status != "Boarded":
-			frappe.throw("Status not equlat to boarded")
+			frappe.throw("Status not equlat to Boarded")
 
 	def before_save(self):
 		capacity=self.get_capacity_by_flight(self.flight)
