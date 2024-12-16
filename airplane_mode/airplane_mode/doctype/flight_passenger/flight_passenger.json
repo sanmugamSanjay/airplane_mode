@@ -7,6 +7,7 @@
  "field_order": [
   "first_name",
   "date_of_birth",
+  "email",
   "column_break_oftj",
   "last_name",
   "full_name"
@@ -40,6 +41,13 @@
    "fieldtype": "Data",
    "label": "Full Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -49,7 +57,7 @@
    "link_fieldname": "passenger"
   }
  ],
- "modified": "2024-11-22 13:54:14.855997",
+ "modified": "2024-12-10 22:31:58.507146",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Flight Passenger",

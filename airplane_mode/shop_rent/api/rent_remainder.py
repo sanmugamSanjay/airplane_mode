@@ -30,8 +30,8 @@ def send_rent_reminders():
     if shops:
         for shop in shops:
             obj = {
-                "recipients": ['abai.karthik@aalamsoft.com','sanmuganathan.yuvaraj@aalamsoft.com'],
-                # "recipients": ["{shop.email}"],
+                # "recipients": ['abai.karthik@aalamsoft.com','sanmuganathan.yuvaraj@aalamsoft.com'],
+                "recipients": ["{shop.email}"],
                 "subject": "Rent Payment Reminder",
                 "message": f"""
                     <p>Dear {shop.tenant_name},</p>
@@ -46,6 +46,8 @@ def send_rent_reminders():
                     recipients=obj["recipients"],
                     subject=frappe._(obj["subject"]),
                     message=obj["message"],
+                    delayed=False,
+					retry=3
                 )
                 print(obj['recipients'])
             except Exception as e:
@@ -53,7 +55,3 @@ def send_rent_reminders():
         return "Mail sent"
     else:
         return "No shop found"
-
-        
-
-   

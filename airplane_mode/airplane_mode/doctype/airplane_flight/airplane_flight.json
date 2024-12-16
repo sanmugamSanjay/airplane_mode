@@ -17,6 +17,7 @@
   "route",
   "is_published",
   "gate_no",
+  "new_gate_no",
   "section_break_nzqx",
   "source_airport",
   "source_airport_code",
@@ -130,6 +131,7 @@
    "label": "Is Published"
   },
   {
+   "allow_on_submit": 1,
    "default": "GT-1",
    "fieldname": "gate_no",
    "fieldtype": "Select",
@@ -146,6 +148,12 @@
    "fieldtype": "Table",
    "label": "Crew Members",
    "options": "Crew Member"
+  },
+  {
+   "depends_on": "eval: doc.new_gate_no != null",
+   "fieldname": "new_gate_no",
+   "fieldtype": "Data",
+   "label": "New Gate No"
   }
  ],
  "has_web_view": 1,
@@ -158,7 +166,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-11-30 14:28:56.488568",
+ "modified": "2024-12-10 21:50:15.763487",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",

@@ -52,6 +52,21 @@ class AirportShop(Document):
         # self.is_canceled = True
         # self.save()
         update_airport_count(self, "cancel")
+    
+    @frappe.whitelist()
+    def assign_tenant(self):
+        try:
+            previous_doc = self.get_doc_before_save()
+            self.save()
+            
+            if previous_doc.tenant:
+                return f"Tenant re-assigned successfully for shop {self.name}."
+            else:
+                return f"Tenant assigned successfully for shop {self.name}."
+        except Exception as e:
+            frappe.log_error(f"Error assigning tenant for shop {self.name}: {str(e)}", "Tenant Assign Error")
+            frappe.throw(_("Could not assign tenant. Please check the logs for more details."))
+
 
 
 def update_airport_count(self, action):
